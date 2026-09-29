@@ -12,6 +12,7 @@ import {
   finalBurnScarOutline,
   forestTypeLayer,
   landUseLayer,
+  publicDataUrl,
   recoveryLayers,
   severityLayer,
   studyBoundary,
@@ -722,9 +723,9 @@ function App() {
 
         const [annual, severity, classAreas] = await Promise.all([
           // These files are direct exports from the confirmed final Model B Cell 14 run.
-          loadCsv('/data/annual_recovery_ModelB_FINAL.csv'),
-          loadCsv('/data/brr_2568_by_severity_ModelB_FINAL.csv'),
-          loadCsv('/data/recovery_class_area_2563_2568_ModelB_FINAL.csv'),
+          loadCsv(publicDataUrl('annual_recovery_ModelB_FINAL.csv')),
+          loadCsv(publicDataUrl('brr_2568_by_severity_ModelB_FINAL.csv')),
+          loadCsv(publicDataUrl('recovery_class_area_2563_2568_ModelB_FINAL.csv')),
         ]);
 
         if (!cancelled) {

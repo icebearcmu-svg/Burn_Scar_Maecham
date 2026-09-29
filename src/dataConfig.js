@@ -3,10 +3,12 @@ export const appConfig = {
   dataSource: 'Final Model B recovery exports from Cell 14',
 };
 
+export const publicDataUrl = (fileName) => `${import.meta.env.BASE_URL}data/${fileName}`;
+
 export const studyBoundary = {
   id: 'maechaem-amphoe-boundary',
   name: 'ขอบเขตอำเภอแม่แจ่ม',
-  fileUrl: '/data/Maecham_Amphoe.zip',
+  fileUrl: publicDataUrl('Maecham_Amphoe.zip'),
   visible: true,
   style: {
     color: '#163d2d',
@@ -19,7 +21,7 @@ export const studyBoundary = {
 export const severityLayer = {
   id: 'dnbr-severity-2563',
   name: 'ระดับความรุนแรง dNBR (2563)',
-  fileUrl: '/data/MaeCham_ModelB_FinalBurnSeverity_2563.tif',
+  fileUrl: publicDataUrl('MaeCham_ModelB_FinalBurnSeverity_2563.tif'),
   visible: true,
   classes: [
     { value: 1, label: 'ต่ำ', color: '#fee08b' },
@@ -32,7 +34,7 @@ export const severityLayer = {
 export const tambonBoundary = {
   id: 'maechaem-tambon-boundaries',
   name: 'ขอบเขตตำบล',
-  fileUrl: '/data/Maecham_Tambon.zip',
+  fileUrl: publicDataUrl('Maecham_Tambon.zip'),
   visible: true,
   style: {
     color: '#557363',
@@ -46,7 +48,7 @@ export const tambonBoundary = {
 export const landUseLayer = {
   id: 'land-use',
   name: 'การใช้ประโยชน์ที่ดิน',
-  fileUrl: '/data/Landuse_MaeChaem.zip',
+  fileUrl: publicDataUrl('Landuse_MaeChaem.zip'),
   classField: 'LUL1_CODE',
   visible: false,
   classes: [
@@ -71,21 +73,21 @@ export const recoveryLayers = [
   {
     id: 'brr-recovery-2563',
     name: 'ชั้นการฟื้นตัว BRR (2563)',
-    fileUrl: '/data/MaeCham_BRR_RecoveryClass_2563.tif',
+    fileUrl: publicDataUrl('MaeCham_BRR_RecoveryClass_2563.tif'),
     opacity: 0.96,
     classes: recoveryClasses,
   },
   {
     id: 'brr-recovery-2564',
     name: 'ชั้นการฟื้นตัว BRR (2564)',
-    fileUrl: '/data/MaeCham_BRR_RecoveryClass_2564.tif',
+    fileUrl: publicDataUrl('MaeCham_BRR_RecoveryClass_2564.tif'),
     opacity: 0.96,
     classes: recoveryClasses,
   },
   {
     id: 'brr-recovery-2565',
     name: 'ชั้นการฟื้นตัว BRR (2565)',
-    fileUrl: '/data/MaeCham_BRR_RecoveryClass_2565.tif',
+    fileUrl: publicDataUrl('MaeCham_BRR_RecoveryClass_2565.tif'),
     opacity: 0.96,
     classes: recoveryClasses,
   },
@@ -94,7 +96,7 @@ export const recoveryLayers = [
 export const forestTypeLayer = {
   id: 'forest-type',
   name: 'ประเภทป่าไม้',
-  fileUrl: '/data/Maecham_ForestType.zip',
+  fileUrl: publicDataUrl('Maecham_ForestType.zip'),
   classField: 'Class_ID',
   visible: false,
   classes: [
@@ -119,7 +121,7 @@ export const forestTypeLayer = {
 export const finalBurnScarOutline = {
   id: 'final-burn-scar-outline-2563',
   name: 'ขอบเขตรอยไหม้สุดท้าย (2563)',
-  fileUrl: '/data/MaeCham_ModelB_FinalBurnScar_2563.geojson',
+  fileUrl: publicDataUrl('MaeCham_ModelB_FinalBurnScar_2563.geojson'),
   visible: true,
   style: {
     color: '#7a0019',
