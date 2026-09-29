@@ -1,22 +1,4 @@
-Set-Location "C:\Users\ADMINS\Documents\maechaem-platform"
-
-if (-not (Test-Path .git)) { git init }
-git branch -M main
-
-$remote = git remote get-url origin 2>$null
-if ($remote) {
-  git remote set-url origin "https://github.com/icebearorsunshine-dotcom/maecharm.git"
-} else {
-  git remote add origin "https://github.com/icebearorsunshine-dotcom/maecharm.git"
-}
-
-git add -A
-if (-not (git diff --cached --quiet)) {
-  git commit -m "Update project"
-  if ($LASTEXITCODE -ne 0) { throw "Commit ไม่สำเร็จ" }
-}
-
-git push -u origin main<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
