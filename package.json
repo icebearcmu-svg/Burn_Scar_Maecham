@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "geoserver:init": "powershell.exe -ExecutionPolicy Bypass -File .\\scripts\\initialize-local-geoserver.ps1"
   },
   "dependencies": {
     "georaster": "^1.6.0",
